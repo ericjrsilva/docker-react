@@ -1,10 +1,9 @@
 sudo: required
-
 services:
   - docker
 
 before_install:
   - docker build -t eric/docker-react -f Dockerfile.dev .
 
-scripts:
+script:
   - docker run eric/docker-react npm run test -- --coverage
